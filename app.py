@@ -119,23 +119,23 @@ def main():
     st.sidebar.title("导航菜单")
     page = st.sidebar.selectbox(
         "选择功能",
-        ["🏠 首页", "📊 个人评估", "🎯 利基分析", "📈 市场趋势", "💡 个性化推荐", "📋 行动计划", "📚 学习资源"]
+        ["首页", "个人评估", "利基分析", "市场趋势", "个性化推荐", "行动计划", "学习资源"]
     )
     
     # 页面路由
-    if page == "🏠 首页":
+    if page == "首页":
         show_homepage()
-    elif page == "📊 个人评估":
+    elif page == "个人评估":
         show_assessment()
-    elif page == "🎯 利基分析":
+    elif page == "利基分析":
         show_niche_analysis()
-    elif page == "📈 市场趋势":
+    elif page == "市场趋势":
         show_market_trends()
-    elif page == "💡 个性化推荐":
+    elif page == "个性化推荐":
         show_personalized_recommendations()
-    elif page == "📋 行动计划":
+    elif page == "行动计划":
         show_action_plan()
-    elif page == "📚 学习资源":
+    elif page == "学习资源":
         show_learning_resources()
 
 def show_homepage():
