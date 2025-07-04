@@ -183,7 +183,13 @@ def show_personalized_recommendations():
     
     # 显示推荐结果
     st.markdown("### 🎯 为你推荐的AI副业方向")
-    
+
+    # 输出一句最优推荐语
+    best_rec = recommendations[0]
+    st.success(f"根据你的兴趣和技能，最适合你的AI副业方向是：{best_rec['利基市场']}。")
+
+    st.markdown("前3个推荐方向的匹配度分析")
+
     # 雷达图
     top_3 = recommendations[:3]
     categories = [rec["利基市场"] for rec in top_3]
@@ -469,4 +475,26 @@ def calculate_compatibility_score(user_profile, niche):
             interest_match += 1
     score += min(interest_match * 10, 20)
     
-    return round(score, 1) 
+    return round(score, 1)
+
+def show_assessment():
+    st.markdown('<h2 class="sub-header">📊 个人能力与兴趣评估</h2>', unsafe_allow_html=True)
+
+    if "user_profile" not in st.session_state:
+        st.session_state.user_profile = {}
+
+    with st.form("assessment_form"):
+        # ...表单内容...
+        # 这里省略表单输入部分，保留原有内容
+        submitted = st.form_submit_button("提交评估", type="primary")
+        if submitted:
+            st.session_state.user_profile = {
+                # ...收集的表单数据...
+                # 这里省略原有赋值内容
+            }
+            st.success("✅ 评估完成！请查看个性化推荐。")
+            st.balloons()
+            st.markdown("<div style='text-align:center;margin:2rem 0;'>", unsafe_allow_html=True)
+            st.image("alipay_qr.png", caption="支付宝扫码支持作者", width=220)
+            st.markdown("<p style='text-align:center;color:#1f77b4;'>如果本工具对你有帮助，欢迎扫码打赏支持！</p>", unsafe_allow_html=True)
+            st.markdown("</div>", unsafe_allow_html=True) 

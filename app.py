@@ -193,8 +193,7 @@ def show_homepage():
     
     # 快速开始按钮
     if st.button("🚀 开始我的AI副业之旅", type="primary", use_container_width=True):
-        st.session_state.current_page = "assessment"
-        st.rerun()
+        st.info("请在左侧菜单选择“个人评估”开始你的AI副业探索之旅。")
 
 def show_assessment():
     st.markdown('<h2 class="sub-header">📊 个人能力与兴趣评估</h2>', unsafe_allow_html=True)
