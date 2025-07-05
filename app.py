@@ -180,20 +180,9 @@ def show_homepage():
     </div>
     """, unsafe_allow_html=True)
     
-    # 新增支付宝打赏区块
-    st.markdown("""
-    <div style='text-align:center;margin:2rem 0;'>
-        <h3 style='color:#1f77b4;'>☕ 觉得好用请请我喝杯奶茶</h3>
-        <p style='color:#444;'>你的支持是我持续优化的最大动力！</p>
-    </div>
-    """, unsafe_allow_html=True)
-    st.markdown("<div style='text-align:center;'>", unsafe_allow_html=True)
-    st.image("alipay_qr.png", caption="支付宝扫码支持作者", width=220)
-    st.markdown("</div>", unsafe_allow_html=True)
-    
     # 快速开始按钮
     if st.button("🚀 开始我的AI副业之旅", type="primary", use_container_width=True):
-        st.info("请在左侧菜单选择“个人评估”开始你的AI副业探索之旅。")
+        st.info("请在左侧菜单选择‘个人评估’开始你的AI副业探索之旅。")
 
 def show_assessment():
     st.markdown('<h2 class="sub-header">📊 个人能力与兴趣评估</h2>', unsafe_allow_html=True)

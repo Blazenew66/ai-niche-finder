@@ -4,6 +4,52 @@ import plotly.express as px
 import plotly.graph_objects as go
 from data import AI_NICHES
 
+def show_homepage():
+    st.markdown('<h2 class="sub-header">欢迎使用AI副业利基市场确定工具</h2>', unsafe_allow_html=True)
+    
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.markdown("""
+        <div class="card">
+            <h3>🎯 工具功能</h3>
+            <ul>
+                <li>个人能力与兴趣评估</li>
+                <li>AI副业机会分析</li>
+                <li>市场需求趋势分析</li>
+                <li>个性化推荐系统</li>
+                <li>详细行动计划制定</li>
+                <li>学习资源推荐</li>
+            </ul>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with col2:
+        st.markdown("""
+        <div class="card">
+            <h3>🚀 使用步骤</h3>
+            <ol>
+                <li>完成个人评估问卷</li>
+                <li>查看利基市场分析</li>
+                <li>了解市场趋势</li>
+                <li>获得个性化推荐</li>
+                <li>制定行动计划</li>
+                <li>开始学习实践</li>
+            </ol>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    st.markdown("""
+    <div class="highlight">
+        <h3>💡 为什么选择AI副业？</h3>
+        <p>AI技术正在改变各行各业，为普通人创造了大量副业机会。无论是内容创作、应用开发、还是咨询服务，AI都能帮助你提高效率、降低成本、创造价值。</p>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # 快速开始按钮
+    if st.button("🚀 开始我的AI副业之旅", type="primary", use_container_width=True):
+        st.info("请在左侧菜单选择'个人评估'开始你的AI副业探索之旅。")
+
 def show_niche_analysis():
     st.markdown('<h2 class="sub-header">🎯 AI副业利基市场分析</h2>', unsafe_allow_html=True)
     
@@ -187,6 +233,12 @@ def show_personalized_recommendations():
     # 输出一句最优推荐语
     best_rec = recommendations[0]
     st.success(f"根据你的兴趣和技能，最适合你的AI副业方向是：{best_rec['利基市场']}。")
+
+    # 支付宝二维码和感谢文案
+    st.markdown("<div style='text-align:center;margin:2rem 0;'>", unsafe_allow_html=True)
+    st.image("alipay_qr.png", caption="支付宝扫码支持作者", width=220)
+    st.markdown("<p style='text-align:center;color:#1f77b4;'>如果本工具对你有帮助，欢迎扫码打赏支持！</p>", unsafe_allow_html=True)
+    st.markdown("</div>", unsafe_allow_html=True)
 
     st.markdown("前3个推荐方向的匹配度分析")
 
